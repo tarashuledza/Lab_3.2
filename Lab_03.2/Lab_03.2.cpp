@@ -11,7 +11,18 @@ int main()
 	cout << "b = "; cin >> b;
 	cout << "c = "; cin >> c;
 	cout << "x = "; cin >> x;
-
+	
+	// спосіб 1: розгалуження в скороченій формі
+	if (c < 0 && b != 0)
+		F = a * x * x + b * b * x;
+	if (c > 0 && b == 0)
+		F = (x + a) / (x + c);
+	if (!(c < 0 && b != 0) && !(c > 0 && b == 0))
+		F = x / c;
+	cout << endl;
+	cout << "1) F = " << F << endl;
+	
+	// спосіб 2: розгалуження в повній формі
 	if (c < 0 && b != 0)
 		F = a * x * x + b * b * x;
 	else
@@ -19,7 +30,7 @@ int main()
 			F = (x + a) / (x + c);
 		else
 			F = x / c;
-	cout << "F = " << F << endl;
+	cout << "2) F = " << F << endl;
 
 	cin.get();
 	return 0;
